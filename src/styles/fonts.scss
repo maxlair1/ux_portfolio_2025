@@ -1,0 +1,55 @@
+//
+// JetBrains Mono
+//
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+//
+// Charter
+//
+
+// Charter - Regular
+@font-face {
+    font-family: 'Charter';
+    src: url('../static/fonts/charter_regular.woff2') format('woff2'),
+         url('../static/fonts/Charter Regular.otf') format('woff'),
+         url('../static/fonts/Charter Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  // Charter - Italic
+  @font-face {
+    font-family: 'Charter';
+    src: url('../static/fonts/charter_italic.woff2') format('woff2'),
+         url('../static/fonts/Charter Italic.otf') format('woff'),
+         url('../static/fonts/Charter Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  // Charter - Bold
+  @font-face {
+    font-family: 'Charter';
+    src: url('../static/fonts/charter_bold.woff2') format('woff2'),
+         url('../static/fonts/Charter Bold.otf') format('woff'),
+         url('../static/fonts/Charter Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  
+  // Charter - Bold Italic
+  @font-face {
+    font-family: 'Charter';
+    src: url('../static/fonts/charter_bold_italic.woff2') format('woff2'),
+         url('../static/fonts/Charter Bold Italic.otf') format('woff'),
+         url('../static/fonts/Charter Bold Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  

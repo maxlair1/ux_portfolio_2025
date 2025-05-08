@@ -1,2 +1,5 @@
-# ux_portfolio_2025
-Updated portfolio for 2025 with greater detail in case studies and projects.
+# Max Lair's 2025 Portfolio
+
+Below is some brief documentation for the development and sustainment of this project:
+
+### Packages and their uses

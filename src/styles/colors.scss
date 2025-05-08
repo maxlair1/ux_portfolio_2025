@@ -1,0 +1,33 @@
+// ===== GRAYSCALE (LINEAR SCALE) =====
+// Based on visually sampling your image and extending it evenly.
+
+$grey-100: #f5f6f7; // very light gray (near white)
+$grey-200: #e1e4e9; // light background (used in body)
+$grey-300: #cfd3d9; 
+$grey-400: #b4b8bd;
+$grey-500: #9a9ea3; 
+$grey-600: #7f8286;
+$grey-700: #5f6164; 
+$grey-800: #3b3c3e; 
+$grey-900: #1e1a1a; // almost black, used in text/icons/buttons
+
+// ===== BRAND / ACCENT COLORS =====
+$color-highlight: #E13D2B;   // red highlight (used on “MAX LAIR”)
+
+// ===== FOLDER & UI COLORS =====
+$color-folder-bg: #f6f0ce;   // pale yellow (folder)
+$color-footer-bg: $grey-900;
+$color-button-bg: $grey-900;
+$color-button-text: $grey-100;
+
+// ===== PROJECT CARD COLORS =====
+$card-localbean-1: #c4b8cc;  // lavender
+$card-localbean-2: #b3a257;  // ochre
+$card-localbean-3: #baa7a8;  // mauve
+$card-localbean-4: #acabb3;  // steel gray// Colors
+$color-text: #232323;
+$color-text-muted: #777;
+$color-background: #f8f8f8;
+$color-border: #e0e0e0;
+$color-link: #000;
+$color-accent: #FF8A00; // Orange color from the design

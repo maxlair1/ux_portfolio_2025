@@ -1,0 +1,259 @@
+// Local Bean Markdown SCSS Styles
+// Typography variables
+$font-family-base: 'Charter', serif;
+$font-family-mono: 'JetBrains Mono', monospace;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$line-height-base: 1.5;
+$letter-spacing-tight: -0.02em;
+$letter-spacing-wide: 0.05em;
+
+// Colors
+$color-text: #232323;
+$color-text-muted: #777;
+$color-background: #f8f8f8;
+$color-border: #e0e0e0;
+$color-link: #000;
+$color-accent: #FF8A00;
+
+// Spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$spacing-xxl: 64px;
+$content-max-width: 760px;
+
+// Base styles
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text;
+  background-color: $color-background;
+  margin: 0;
+  padding: 0;
+}
+
+.markdown-content {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  
+  // Typography
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-mono;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-md;
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: $font-size-xl;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    margin-top: $spacing-xxl;
+    margin-bottom: $spacing-lg;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: $font-size-lg;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    font-weight: 700;
+    margin-top: $spacing-xl;
+    border-bottom: 1px solid $color-border;
+    padding-bottom: $spacing-xs;
+  }
+  
+  h3 {
+    font-size: $font-size-base;
+    font-weight: 700;
+    letter-spacing: $letter-spacing-tight;
+  }
+  
+  p {
+    margin-bottom: $spacing-md;
+    font-family: $font-family-base;
+  }
+  
+  // Meta information (date, author)
+  .meta {
+    font-family: $font-family-mono;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-bottom: $spacing-lg;
+    
+    .separator {
+      margin: 0 $spacing-xs;
+    }
+  }
+  
+  // Links
+  a {
+    color: $color-text;
+    text-decoration: underline;
+    text-decoration-color: $color-accent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    
+    &:hover {
+      color: $color-accent;
+    }
+  }
+  
+  // Lists
+  ul, ol {
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-lg;
+    
+    li {
+      margin-bottom: $spacing-xs;
+    }
+  }
+  
+  // Blockquotes
+  blockquote {
+    border-left: 4px solid $color-accent;
+    padding-left: $spacing-md;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    color: $color-text-muted;
+  }
+  
+  // Code blocks
+  pre {
+    font-family: $font-family-mono;
+    font-size: $font-size-sm;
+    background-color: darken($color-background, 3%);
+    padding: $spacing-md;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: $spacing-md;
+  }
+  
+  code {
+    font-family: $font-family-mono;
+    font-size: 0.9em;
+    background-color: darken($color-background, 3%);
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+  
+  // Horizontal rule
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: $color-border;
+    margin: $spacing-xl 0;
+  }
+  
+  // Images
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: $spacing-md 0;
+  }
+  
+  // Tables
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $spacing-md 0;
+    font-size: $font-size-sm;
+    
+    th {
+      font-family: $font-family-mono;
+      text-align: left;
+      border-bottom: 2px solid $color-border;
+      padding: $spacing-xs $spacing-sm;
+    }
+    
+    td {
+      padding: $spacing-xs $spacing-sm;
+      border-bottom: 1px solid $color-border;
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+  
+  // Footer
+  .footer {
+    font-family: $font-family-mono;
+    font-size: $font-size-xs;
+    margin-top: $spacing-xxl;
+    display: flex;
+    justify-content: space-between;
+    padding-top: $spacing-md;
+    border-top: 1px solid $color-border;
+    color: $color-text-muted;
+  }
+  
+  // Special sections styling
+  .problem, .opportunity {
+    .section-title {
+      font-family: $font-family-mono;
+      font-size: $font-size-sm;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-wide;
+      color: $color-text-muted;
+      margin-bottom: $spacing-xs;
+    }
+  }
+  
+  // Specific design elements from the example
+  .back-button {
+    display: inline-block;
+    font-family: $font-family-mono;
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    padding: $spacing-xs $spacing-sm;
+    margin-bottom: $spacing-lg;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  
+  // App screenshots grid
+  .app-screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-md;
+    margin: $spacing-lg 0;
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: $spacing-md;
+    
+    h1 {
+      font-size: $font-size-lg;
+    }
+    
+    h2 {
+      font-size: $font-size-base;
+    }
+    
+    .app-screenshots {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: $spacing-sm;
+    
+    .app-screenshots {
+      grid-template-columns: 1fr;
+    }
+  }
+}
