@@ -1,0 +1,14 @@
+// custom styles for the button component module.
+.rollButton {
+    transition: all ease-in-out 200ms;
+}
+.rollButton:hover {
+    border-radius: 20px;
+}
+.buttonInnerText {
+    transition: all ease-in-out 200ms;
+    line-height: 1;
+}
+.rollButton:hover .buttonInnerText {
+    transform: translateY(-100%);
+}
