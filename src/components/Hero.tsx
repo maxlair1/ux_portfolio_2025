@@ -4,13 +4,14 @@ import ThumbnailMini from './ThumbnailMini';
 
 export default function Profile() {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center md:justify-center h-screen flex-col">
       <img
+        className='p-4 mt-20 md:mt-0'
         src="hero_logo.svg"
         alt="Hero Logo (Max Lair)"
       />
       <ReceiptDisclosure></ReceiptDisclosure>
-      <div className='absolute bottom-4 right-4'>
+      <div className='absolute bottom-4 right-4 invisible md:visible'>
         <div className='flex flex-row gap-4'>
           <ThumbnailMini 
             number="01" 

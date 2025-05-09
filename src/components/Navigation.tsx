@@ -13,33 +13,33 @@ const Navigation: React.FC = () => {
 
     return (
         <nav className="fixed m-4 z-50">
-            {/* Hamburger / Collapse Button */}
-            <button
-                className="md:hidden flex items-center px-3 py-2 border rounded transition-all duration-300 focus:outline-none"
-                onClick={() => setOpen((prev) => !prev)}
-                aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-            >
-                <span
-                    className={`block w-6 h-0.5 bg-black transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`}
-                />
-                <span
-                    className={`block w-6 h-0.5 bg-black my-1 transition-all duration-300 ${open ? 'opacity-0' : ''}`}
-                />
-                <span
-                    className={`block w-6 h-0.5 bg-black transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`}
-                />
-            </button>
+            {/* Menu Button */}
+            <div className='md:hidden flex items-center'>
+                <Button onClick={() => setOpen((prev) => !prev)} appendStart={"["} text={"menu"} appendEnd={"]"} />
+            </div>
 
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex flex-col gap-2">
-                {navItems.map((item) => (
-                    <li key={item.id}>
-                        <a href={item.href}>
-                            <Button appendStart={<p className="superscript">{item.id}</p>} text={item.text} />
-                        </a>
-                    </li>
-                ))}
-            </ul>
+            {/* Desktop Navigation with blurred, tapered background */}
+            <div className="hidden md:block relative">
+                <div
+                    className="
+                        absolute inset-0 -z-10
+                        backdrop-blur-md
+                        bg-white/01
+                        pointer-events-none
+                        rounded-xl
+                        mask-gradient-horizontal
+                    "
+                />
+                <ul className="flex flex-col gap-2 p-4">
+                    {navItems.map((item) => (
+                        <li key={item.id}>
+                            <a href={item.href}>
+                                <Button appendStart={<p className="superscript">{item.id}</p>} text={item.text} />
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
 
             {/* Mobile Navigation Overlay */}
             <div

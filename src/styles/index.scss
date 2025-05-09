@@ -5,13 +5,12 @@
 //Custom styles
 @import "./fonts.scss";
 @import "./colors.scss";
+@import "./typography.scss";
 
 body {
-  background-color: $grey-200;
+  background-color: var(--color-background);
   margin: 0;
-  font-family: "Charter", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,6 +18,13 @@ body {
 code {
   font-family: "JetBrains Mono", 'Courier New',
     monospace;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  margin-block: 8px;
 }
 
 
