@@ -1,4 +1,5 @@
 import React from 'react';
+import Suspense from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
@@ -9,14 +10,16 @@ import App from './App';
 import HomePage from './components/HomePage';
 import ProjectPage from './components/ProjectPage';
 import reportWebVitals from './reportWebVitals';
+import PageLoader from './components/PageLoader';
+import FullPageLoader from './components/FullPageLoader';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <App>
-        <HomePage />
-      </App>
+        <App>
+          <HomePage />
+        </App>
     ),
   },
   {

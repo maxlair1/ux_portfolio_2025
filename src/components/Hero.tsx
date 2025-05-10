@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import ReceiptDisclosure from './ReceiptDisclosure';
 import ThumbnailMini from './ThumbnailMini';
 import ThreeDMe from './ThreeDMe';
+import styles from './Hero.module.scss';
 
 export default function Profile() {
   const [isBlurred, setIsBlurred] = useState(true);
+  const [modelLoaded, setModelLoaded] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsBlurred(false), 100); // slight delay for effect
@@ -14,7 +16,7 @@ export default function Profile() {
   return (
     <div className="flex items-center md:justify-center h-screen flex-col relative">
       <img
-        className={`p-4 mt-20 md:mt-0 md:w-full transition-all duration-1000 delay-20 ${isBlurred ? 'blur-md' : 'blur-0'}`}
+        className={`mix-blend-darken p-4 mt-20 md:mt-0 md:w-full transition-all duration-1000 delay-20 ${isBlurred ? 'blur-md' : 'blur-0'}`}
         src="hero_logo.svg"
         alt="Hero Logo (Max Lair)"
       />
@@ -38,8 +40,8 @@ export default function Profile() {
           />
         </div>
       </div>
-      <div className='z-[1] absolute justify-center bottom-0 top-0 left-0 right-0 flex flex-col items-center pointers-none'>
-        <ThreeDMe gltfUrl="me.glb" style={{ width: '100%', height: '100%' }} />
+      <div className={`${modelLoaded ? 'opacity-1 translate-y-[0px]' : 'opacity-0 translate-y-[200px]'} transition-all duration-300 z-[-1] absolute justify-center bottom-0 top-0 left-0 right-0 flex flex-col items-center pointer-events-none`}>
+        <ThreeDMe onModelLoaded={() => {setModelLoaded(true)}} gltfUrl="me_jacket_cropped.glb" style={{ width: '100%', height: '100%' }} />
       </div>
     </div>
   );

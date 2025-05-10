@@ -16,21 +16,16 @@ export default function PortfolioThumbnail({
       </div>
       
       <div 
-        className={`relative w-full h-[10rem] overflow-hidden transition-all duration-500 ease-in-out ${isHovered ? 'shadow-lg scale-102' : 'shadow-sm scale-100'}`}
-        style={{
-          transform: isHovered ? 'scale(1.02)' : 'scale(1)',
-          boxShadow: isHovered ? '0 10px 25px rgba(0,0,0,0.1)' : '0 2px 5px rgba(0,0,0,0.05)',
-          transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease'
-        }}
+        className={`relative w-full h-[10rem] overflow-hidden transition-all`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Front image */}
         <div
-          className="absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out"
+          className="absolute inset-0 w-full h-full transition-transform duration-200 ease-in-out"
           style={{
             transform: isHovered ? 'translateX(-100%)' : 'translateX(0)',
-            transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+            transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
           }}
         >
           <img 
@@ -41,17 +36,17 @@ export default function PortfolioThumbnail({
           
           {/* Overlay with subtle gradient on hover */}
           <div 
-            className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/20 transition-opacity duration-300"
+            className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/20 transition-opacity duration-100"
             style={{ opacity: isHovered ? 0.7 : 0 }}
           />
         </div>
         
         {/* Back image (revealed on hover) */}
         <div
-          className="absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out"
+          className="absolute inset-0 w-full h-full transition-transform duration-100 ease-in-out"
           style={{
             transform: isHovered ? 'translateX(0)' : 'translateX(100%)',
-            transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+            transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
           }}
         >
           <img 
