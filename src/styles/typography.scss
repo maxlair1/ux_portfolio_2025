@@ -50,3 +50,67 @@ h6 {
   font-family: $font-family-mono;
   text-transform: uppercase;
 }
+
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+blockquote {
+  font-family: $font-family-secondary;
+  font-size: $type-3;
+  line-height: 1.4;
+  color: var(--color-text-secondary, #666);
+  border-left: 4px solid var(--color-accent, #0070f3);
+  padding-left: $spacing-3;
+  margin: $spacing-3 0;
+  background: var(--color-bg-alt, #f9f9f9);
+}
+
+ul, ol {
+  margin: $spacing-2 0 $spacing-2 $spacing-4;
+  padding: 0;
+  font-size: $type-2;
+  line-height: 1.5;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: $spacing-1 / 2;
+}
+
+code, pre, kbd, samp {
+  font-family: $font-family-mono;
+  font-size: $type-1;
+  background: var(--color-bg-code, #f5f5f5);
+  color: var(--color-text-code, #c7254e);
+  border-radius: 4px;
+}
+
+code, kbd, samp {
+  padding: 0.1em 0.4em;
+}
+
+pre {
+  display: block;
+  padding: $spacing-2;
+  margin: $spacing-2 0;
+  overflow-x: auto;
+  font-size: $type-1;
+  background: var(--color-bg-code, #f5f5f5);
+  color: var(--color-text-code, #c7254e);
+  border-radius: 6px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--color-border, #eaeaea);
+  margin: $spacing-4 0;
+}

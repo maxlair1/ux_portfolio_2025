@@ -1,4 +1,5 @@
 import React from 'react';
+import UnblurOnScroll from './UnblurOnScroll';
 
 const services = {
   productDesign: {
@@ -6,7 +7,7 @@ const services = {
     description: 'I specialize in solving complex usability and interaction challenges across the entire product lifecycle. I lead design teams in agile environments, bridging the gap between design and development while managing stakeholder expectations with clarity and confidence.'
   },
   productManagement: {
-    title: 'Frontend Development',
+    title: 'Frontend Development (React)',
     description: 'With a strong grasp of front-end development, I evaluate design feasibility early and often. I build, maintain, and refine digital products using modern frameworks, ensuring they meet both user needs and technical standards.'
   },
   development: {
@@ -18,8 +19,10 @@ const services = {
 const About = () => {
   return (
 
-    <section className="mt-40">
-      <h1 className='flex justify-center pb-10'>About</h1>
+    <section className="mt-40 mx-4">
+      {/* <UnblurOnScroll> */}
+        <h1 className='flex justify-center pb-10'>About</h1>
+      {/* </UnblurOnScroll> */}
       {/* Content */}
       <div>
         {/* Name and title */}

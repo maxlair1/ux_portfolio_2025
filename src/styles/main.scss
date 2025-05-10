@@ -1,0 +1,39 @@
+//Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+//Custom styles
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./typography.scss";
+
+
+body {
+  background-color: var(--color-background);
+  margin: 0;
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "JetBrains Mono", 'Courier New',
+    monospace;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  margin-block: 8px;
+}
+
+// Smooth Scroll Styles (GSAP)
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+  /* set a height because the contents are position: absolute, thus natively there's no height */
+  height: 4000px;
+}
+
+
