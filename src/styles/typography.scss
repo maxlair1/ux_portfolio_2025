@@ -70,22 +70,6 @@ blockquote {
   background: var(--color-bg-alt, #f9f9f9);
 }
 
-ul, ol {
-  margin: $spacing-2 0 $spacing-2 $spacing-4;
-  padding: 0;
-  font-size: $type-2;
-  line-height: 1.5;
-}
-
-ul ul, ol ol, ul ol, ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-li {
-  margin-bottom: $spacing-1 / 2;
-}
-
 code, pre, kbd, samp {
   font-family: $font-family-mono;
   font-size: $type-1;
