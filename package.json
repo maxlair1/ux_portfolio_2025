@@ -55,6 +55,7 @@
     "@types/ws": "^8.18.1",
     "@types/yargs": "^17.0.33",
     "@types/yargs-parser": "^21.0.3",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
     "latest": "^0.2.0",
     "motion": "^12.10.4",
