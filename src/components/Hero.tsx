@@ -40,7 +40,7 @@ export default function Profile() {
           />
         </div>
       </div>
-      <div className={`${modelLoaded ? 'opacity-1 translate-y-[0px]' : 'opacity-0 translate-y-[200px]'} transition-all duration-300 z-[-1] absolute justify-center bottom-0 top-0 left-0 right-0 flex flex-col items-center pointer-events-none`}>
+      <div className={`${modelLoaded ? 'opacity-1 translate-y-[0px]' : 'opacity-0 translate-y-[200px]'} transition-[cubic-bezier(0.505, 0.800, 0.540, 0.995)] duration-700 z-[-1] absolute justify-center bottom-0 top-0 left-0 right-0 flex flex-col items-center pointer-events-none`}>
         <ThreeDMe onModelLoaded={() => {setModelLoaded(true)}} gltfUrl="me_jacket_cropped.glb" style={{ width: '100%', height: '100%' }} />
       </div>
     </div>

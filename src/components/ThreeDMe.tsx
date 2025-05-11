@@ -39,7 +39,7 @@ function SpinningModel({ url, onModelLoaded }: ModelProps) {
 
     return (
         <Center>
-            <primitive ref={group} object={scene} position={[0, 0, 0]} scale={0.75} />
+            <primitive ref={group} object={scene} position={[0, 0, 0]} scale={0.65} />
         </Center>
     );
 }
