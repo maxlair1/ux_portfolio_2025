@@ -20,9 +20,7 @@ const About = () => {
   return (
 
     <section className="mt-40 mx-4">
-      {/* <UnblurOnScroll> */}
-        <h1 className='flex justify-center pb-10'>About</h1>
-      {/* </UnblurOnScroll> */}
+      <h1 className='flex justify-center pb-10'>About</h1>
       {/* Content */}
       <div>
         {/* Name and title */}

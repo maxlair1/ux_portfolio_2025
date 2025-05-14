@@ -11,34 +11,29 @@ import rehypeRaw from 'rehype-raw';
 import Sticker from './Sticker.tsx';
 import ImageRenderer from './ImageRenderer.tsx';
 import Button from './Button.tsx';
+import Footer from './Footer.tsx';
+import Contact from './Contact.tsx';
 
 //register plugin
 gsap.registerPlugin(SplitText) 
 
 window.Buffer = Buffer;
 
-type Frontmatter = {
-  title?: string;
-  description?: string;
-  date?: string;
-  coverImage?: string;
-  // Add other properties as needed
-};
-
 const ProjectPage = ({path}: { path: string }) => {
   const [content, setContent] = useState('');
   const [frontmatter, setFrontmatter] = useState<Frontmatter>({});
+
+  type Frontmatter = {
+    title?: string;
+    description?: string;
+    date?: string;
+    coverImage?: string;
+  };
 
   useEffect(() => {
   function staggerTextGSAP(){
     gsap.set(".unblurOnArrival", {y: 50, opacity: 0, filter: "blur(20px)"})
     gsap.to(".unblurOnArrival", {
-      // scrollTrigger: {
-      //   trigger: ".unblurOnArrival",
-      //   start: "top center",
-      //   end: "top top",
-      //   markers: true
-      // },
       duration: 0.5,
       delay: 1,
       y: 0,
@@ -105,7 +100,7 @@ const ProjectPage = ({path}: { path: string }) => {
       </div>
       {/* Content */}
       {/* <Sticker svg={frontmatter.sticker}></Sticker> */}
-      <div className="mt-[250px] px-5 bg-red max-w-[1125px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="my-[250px] px-5 bg-red max-w-[1125px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="prose prose-neutral dark:prose-invert max-w-none w-full overflow-visible">
           <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
@@ -116,6 +111,8 @@ const ProjectPage = ({path}: { path: string }) => {
           </ReactMarkdown>
         </div>
       </div>
+      <Contact />
+      <Footer />
     </div>
   );
 };

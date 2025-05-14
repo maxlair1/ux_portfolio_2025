@@ -14,6 +14,7 @@ type buttonProps = {
   appendStart?: ReactNode;
   appendEnd?: ReactNode;
   href?: string;
+  brackets?: boolean;
 };
 
 const Button: React.FC<buttonProps> = ({

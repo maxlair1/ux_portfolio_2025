@@ -4,7 +4,7 @@ import ThumbnailMini from './ThumbnailMini';
 import ThreeDMe from './ThreeDMe';
 import styles from './Hero.module.scss';
 import projectsJSON from '../projects.json';
-import fetchMarkdown from '../utils/fetchMarkdown';
+import FollowLabelTarget from './FollowLabelTarget';
 
 export default function Profile() {
   const [isBlurred, setIsBlurred] = useState(true);
@@ -27,17 +27,18 @@ export default function Profile() {
         alt="Hero Logo (Max Lair)"
       />
       <ReceiptDisclosure />
-      <div className='absolute bottom-4 right-4 invisible md:visible'>
+      <div className='absolute bottom-4 right-4 invisible lg:visible'>
         <div className='flex flex-row gap-4'>
           {firstThreeProjects.map((project, index) => (
-            <ThumbnailMini 
-              number={index}
-              frontImage={project.thumbnailFirst}
-              backImage={project.thumbnailSecond}
-              href={`/project/${project.slug}`}
-              >
-              
-            </ThumbnailMini>
+            // <FollowLabelTarget label='test'>
+              <ThumbnailMini 
+                number={String(index)}
+                frontImage={project.thumbnailFirst}
+                backImage={project.thumbnailSecond}
+                href={`/project/${project.slug}`}
+                >
+              </ThumbnailMini>
+            // </FollowLabelTarget>
           ))}
         </div>
       </div>

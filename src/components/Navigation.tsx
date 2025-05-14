@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
     console.log(location.pathname)
 
     const standardNav = (
-        <>
+        <nav>
             <div className='md:hidden flex items-center'>
                 <Button onClick={() => setOpen((prev) => !prev)} appendStart={"["} text={"menu"} appendEnd={"]"} />
             </div>
@@ -58,7 +58,7 @@ const Navigation: React.FC = () => {
                     </li>
                 ))}
             </ul>
-        </>
+        </nav>
     )
 
     const backButton = (

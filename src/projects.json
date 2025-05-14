@@ -5,14 +5,14 @@
             "name": "Local Bean",
             "path": "/src/docs/local-bean.md",
             "thumbnailFirst": "bean_cover.png",
-            "thumbnailSecond": "bean_door_close.png"
+            "thumbnailSecond": "bean_ipad_shop.png"
         },
         "Grokadoc": {
             "slug": "grokadoc",
             "name": "Grokadoc",
             "path": "/src/docs/grokadoc.md",
-            "thumbnailFirst": "grok_thumbnail1.png",
-            "thumbnailSecond": "grok_thumbnail2.png"
+            "thumbnailFirst": "grok_thumbnail2.png",
+            "thumbnailSecond": "grok_cover.png"
         },
         "Dedoro": {
             "slug": "dedoro",
