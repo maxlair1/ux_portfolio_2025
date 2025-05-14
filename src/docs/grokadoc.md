@@ -1,7 +1,7 @@
 ---
 title: Grokadoc
 description: Centralized documentation software supercharged by project management tools
-coverImage: /grok_cover.png
+coverImage: /grok_thumbnail2.png
 sticker: /grok_sticker.svg
 date: 2024 / 03 / 01
 ---
