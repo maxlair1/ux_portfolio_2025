@@ -15,9 +15,9 @@ const FuzzyOverlay = () => {
         repeatType: "mirror",
       }}
       style={{
-        backgroundImage: 'url("black-noise.png")',
+        backgroundImage: 'url("/black-noise.png")',
       }}
-      className="pointer-events-none fixed -inset-[100%] opacity-[10%]"
+      className="absolute z-[999] pointer-events-none fixed -inset-[100%] opacity-[10%]"
     />
   );
 };

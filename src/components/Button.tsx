@@ -9,14 +9,14 @@ type buttonProps = {
   iconAfter?: any;
   text?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  enlargen?: boolean;
+  variant?: "default" | "secondary";
   margin?: boolean;
   appendStart?: ReactNode;
   appendEnd?: ReactNode;
+  href?: string;
 };
 
 const Button: React.FC<buttonProps> = ({
-  enlargen = false,
   iconBefore,
   iconAfter,
   text = "Button",
@@ -24,13 +24,14 @@ const Button: React.FC<buttonProps> = ({
   onClick,
   appendStart,
   appendEnd,
+  variant = "default",
+  href = "#",
 }) => {
-  const size = enlargen ? "p-[8px] rounded-md" : "py-[4px] px-[6px] rounded";
-  const spaceBelow = margin ? "mb-1" : null;
 
   return (
+    <a href={href}>
       <button
-        className={`flex items-center overflow-hidden cursor-pointer ${size} ${styles.rollButton} ${spaceBelow}`}
+        className={`flex items-center overflow-hidden cursor-pointer py-3 px-4 ${styles.rollButton} ${variant === "secondary" ? "inline box-decoration-clone text-text-main bg-highlight" : ""}`}
         onClick={onClick}
         type="button"
       >
@@ -43,6 +44,7 @@ const Button: React.FC<buttonProps> = ({
         {iconAfter && <i className={`ri-${iconAfter} ml-2`}></i>}
         {appendEnd && <span className="ml-2">{appendEnd}</span>}
       </button>
+    </a>
   );
 };
 

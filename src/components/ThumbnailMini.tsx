@@ -1,14 +1,23 @@
 import { useState } from "react";
 
+interface PortfolioThumbnailProps {
+  number?: string;
+  frontImage?: string;
+  backImage?: string;
+  alt?: string;
+  href?: string;
+}
+
 export default function PortfolioThumbnail({ 
   number = "01", 
   frontImage = "/api/placeholder/400/320", 
   backImage = "/api/placeholder/400/320",
-  alt = "Portfolio item"
-}) {
+  alt = "Portfolio item",
+  href
+}: PortfolioThumbnailProps) {
   const [isHovered, setIsHovered] = useState(false);
-  
-  return (
+
+  const content = (
     <div className="relative w-[8rem] cursor-pointer">
       {/* Number indicator - fixed above */}
       <div className="text-[13px] font-mono font-medium text-black mb-2">
@@ -68,4 +77,10 @@ export default function PortfolioThumbnail({
       </div>
     </div>
   );
+
+  return href ? (
+    <a href={href} className="block" tabIndex={0}>
+      {content}
+    </a>
+  ) : content;
 }

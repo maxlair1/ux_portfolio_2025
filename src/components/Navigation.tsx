@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router'
 import Button from './Button.tsx';
 
 const navItems = [
@@ -8,12 +9,14 @@ const navItems = [
     { id: '03', text: 'Contact', href: '#contact' },
 ];
 
+
 const Navigation: React.FC = () => {
     const [open, setOpen] = useState(false);
+    let location = useLocation()
+    console.log(location.pathname)
 
-    return (
-        <nav className="fixed m-4 z-50">
-            {/* Menu Button */}
+    const standardNav = (
+        <>
             <div className='md:hidden flex items-center'>
                 <Button onClick={() => setOpen((prev) => !prev)} appendStart={"["} text={"menu"} appendEnd={"]"} />
             </div>
@@ -33,9 +36,7 @@ const Navigation: React.FC = () => {
                 <ul className="flex flex-col gap-2 p-4">
                     {navItems.map((item) => (
                         <li key={item.id}>
-                            <a href={item.href}>
-                                <Button appendStart={<p className="superscript">{item.id}</p>} text={item.text} />
-                            </a>
+                            <Button href={item.href} appendStart={<p className="superscript">{item.id}</p>} text={item.text} />
                         </li>
                     ))}
                 </ul>
@@ -53,12 +54,37 @@ const Navigation: React.FC = () => {
             >
                 {navItems.map((item) => (
                     <li key={item.id}>
-                        <a href={item.href} onClick={() => setOpen(false)}>
-                            <Button appendStart={<p className="superscript">{item.id}</p>} text={item.text} />
-                        </a>
+                        <Button onClick={() => setOpen(false)} href={item.href} appendStart={<p className="superscript">{item.id}</p>} text={item.text} />
                     </li>
                 ))}
             </ul>
+        </>
+    )
+
+    const backButton = (
+        <div className="mx-6">
+            <Button
+                href="/"
+                variant="secondary"
+                text="Back"
+                appendStart={
+                    <svg
+                        width="24"
+                        height="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                    >
+                        <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z" />
+                    </svg>
+                }
+            />
+        </div>
+    )
+
+    return (
+        <nav className="fixed m-4 z-50">
+            {location.pathname === "/" ? standardNav : backButton}
         </nav>
     );
 };

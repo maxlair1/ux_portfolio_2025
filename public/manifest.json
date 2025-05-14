@@ -25,7 +25,23 @@
     },
     {
       "src": "me.glb",
+      "type": "model/gltf-binary"
+    },
+    {
+      "src": "grok_cover.png",
       "type": "image/png"
+    },
+    {
+      "src": "bean_cover.png",
+      "type": "image/png"
+    },
+    {
+      "src": "deicons.svg",
+      "type": "image/svg"
+    },
+    {
+      "src": "grok_sticker.svg",
+      "type": "image/svg"
     }
   ],
   "start_url": ".",

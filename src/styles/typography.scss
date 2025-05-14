@@ -115,6 +115,13 @@ p,h1,h6 {
     font-family: $font-family-mono;
     margin-block: $spacing-3;
   }
+
+  h3 {
+    font-size: $type-4;
+    line-height: $line-height-base;
+    font-family: $font-family-mono;
+    margin-block: $spacing-3;
+  }
   
   h6 {
     font-size: $type-3;
@@ -149,6 +156,22 @@ p,h1,h6 {
     border-radius: 50%;
     display: inline-block;
   }
+
+  ol {
+    list-style: decimal;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    margin-block: $spacing-3;
+  }
+  
+  ol li {
+    position: relative;
+    padding-left: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: $type-4;
+    font-family: $font-family-base;
+  }
+  
   
   strong, b {
     font-weight: 700;

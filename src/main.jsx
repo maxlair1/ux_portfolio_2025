@@ -1,10 +1,9 @@
-import React from 'react';
-import Suspense from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router";
+} from 'react-router';
 import './styles/main.scss';
 import App from './App';
 import HomePage from './components/HomePage';
@@ -12,24 +11,34 @@ import ProjectPage from './components/ProjectPage';
 import reportWebVitals from './reportWebVitals';
 import PageLoader from './components/PageLoader';
 import FullPageLoader from './components/FullPageLoader';
+import rawProjects from './projects.json';
+
+const projectArray = Object.values(rawProjects.projects);
+const projectRoutes = projectArray.map((project) => ({
+  path: `/project/${project.slug}`,
+  element: <ProjectPage path={project.path} />,
+}));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-        <App>
-          <HomePage />
-        </App>
-    ),
-  },
-  {
-    path: "/project",
-    element: (
       <App>
-        <ProjectPage />
+        <HomePage />
       </App>
     ),
   },
+  ...projectRoutes.map((route) => ({
+    ...route,
+    element: (
+      <App>
+        <Suspense fallback={<FullPageLoader />}>
+          {route.element}
+        </Suspense>
+      </App>
+    ),
+    viewTransition: true,
+  })),
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -39,7 +48,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

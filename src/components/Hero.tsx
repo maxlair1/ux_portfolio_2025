@@ -3,6 +3,8 @@ import ReceiptDisclosure from './ReceiptDisclosure';
 import ThumbnailMini from './ThumbnailMini';
 import ThreeDMe from './ThreeDMe';
 import styles from './Hero.module.scss';
+import projectsJSON from '../projects.json';
+import fetchMarkdown from '../utils/fetchMarkdown';
 
 export default function Profile() {
   const [isBlurred, setIsBlurred] = useState(true);
@@ -12,6 +14,10 @@ export default function Profile() {
     const timer = setTimeout(() => setIsBlurred(false), 100); // slight delay for effect
     return () => clearTimeout(timer);
   }, []);
+
+ const firstThreeProjects = Object.entries(projectsJSON.projects)
+  .slice(0, 3)
+  .map(([key, project]) => ({ key, ...project }));
 
   return (
     <div className="flex items-center md:justify-center h-screen flex-col relative">
@@ -23,21 +29,16 @@ export default function Profile() {
       <ReceiptDisclosure />
       <div className='absolute bottom-4 right-4 invisible md:visible'>
         <div className='flex flex-row gap-4'>
-          <ThumbnailMini 
-            number="01" 
-            frontImage="https://images.unsplash.com/photo-1726661025476-be2e9f427565?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-            backImage="https://images.unsplash.com/photo-1743444374283-06501bf51c11?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          />
-          <ThumbnailMini 
-            number="02" 
-            frontImage="https://images.unsplash.com/photo-1726661025476-be2e9f427565?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-            backImage="https://images.unsplash.com/photo-1743444374283-06501bf51c11?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          />
-          <ThumbnailMini 
-            number="03" 
-            frontImage="https://images.unsplash.com/photo-1726661025476-be2e9f427565?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-            backImage="https://images.unsplash.com/photo-1743444374283-06501bf51c11?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          />
+          {firstThreeProjects.map((project, index) => (
+            <ThumbnailMini 
+              number={index}
+              frontImage={project.thumbnailFirst}
+              backImage={project.thumbnailSecond}
+              href={`/project/${project.slug}`}
+              >
+              
+            </ThumbnailMini>
+          ))}
         </div>
       </div>
       <div className={`${modelLoaded ? 'opacity-1 translate-y-[0px]' : 'opacity-0 translate-y-[200px]'} transition-[cubic-bezier(0.505, 0.800, 0.540, 0.995)] duration-700 z-[-1] absolute justify-center bottom-0 top-0 left-0 right-0 flex flex-col items-center pointer-events-none`}>
