@@ -1,4 +1,4 @@
----
+const e=`---
 title: Local Bean
 description: The Coffee Compendium in Your Pocket
 tags:
@@ -63,4 +63,4 @@ Local Bean taught me the value of starting from a personal itch—something my w
 
 Today, I’m rebuilding Local Bean solo in SwiftUI, paring it back to its essence: a map, the shop details, and a frictionless check-in plus ranking flow. This lean version keeps the magic and removes the noise, ensuring that every time someone opens Local Bean, it’s to celebrate coffee rather than navigate complexity.
 
-If you’re looking for a designer who combines personal passion, user-centered validation, and disciplined scope management, I’d love to share more about how Local Bean came together—and where it’s headed next.
+If you’re looking for a designer who combines personal passion, user-centered validation, and disciplined scope management, I’d love to share more about how Local Bean came together—and where it’s headed next.`;export{e as default};
