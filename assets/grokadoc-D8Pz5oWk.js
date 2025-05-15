@@ -103,5 +103,5 @@ It is currently still being tested as funding is received. Unfortunately, the pr
 ---\r
 \r
 - Because I was building off of branding I had done several years prior, the colors could have contrasted better. In hindsight, I should have used Adobe Leonardo to construct my color system.\r
-- I faced discouragement due to visual differences of the alpha version and the design. Because of this, I let my design  be a little more lenient to allow development a little more wiggle room. REWORD As an alternative, I could enforce a front-end repository (or something similar) like Storybook to close those gaps and avoid slowing down development.\r
+- I faced discouragement due to visual differences of the alpha version and the design. To allow development a little more, I was lenient with design. As an alternative, I could've enforced a front-end repository (or something similar) like Storybook to close those gaps and avoid slowing down development.\r
 `;export{e as default};
