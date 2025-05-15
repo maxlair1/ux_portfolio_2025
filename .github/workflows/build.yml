@@ -25,7 +25,7 @@ jobs:
       - name: Build Vite app
         run: yarn build
 
-      - name: Upload build output
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./dist
