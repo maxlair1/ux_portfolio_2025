@@ -35,7 +35,7 @@ export default function Profile() {
                 number={String(index)}
                 frontImage={project.thumbnailFirst}
                 backImage={project.thumbnailSecond}
-                href={`/${project.slug}`}
+                href={`/projects/${project.slug}`}
                 >
               </ThumbnailMini>
             // </FollowLabelTarget>

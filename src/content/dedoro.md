@@ -2,7 +2,7 @@
 title: Dedoro
 description: Reward Yourself for Productivity
 coverImage: /doro_cover.png
-date: 2023 / 11 / 18
+date: 2023-11-18
 ---
 ## Context
 ---

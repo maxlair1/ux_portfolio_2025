@@ -1,4 +1,6 @@
 import { useState } from "react";
+import getImageSize from '../utils/getImageSize'
+import { Link } from "react-router";
 
 interface PortfolioThumbnailProps {
   number?: string;
@@ -39,7 +41,12 @@ export default function PortfolioThumbnail({
         >
           <img 
             src={frontImage} 
-            alt={alt} 
+            alt={alt}
+            srcSet={`
+                ${getImageSize(frontImage, 25)} 400w,
+                ${getImageSize(frontImage, 50)} 400w,
+                ${frontImage} 1600w
+            `} 
             className="w-full h-full object-cover"
           />
           
@@ -59,7 +66,12 @@ export default function PortfolioThumbnail({
           }}
         >
           <img 
-            src={backImage} 
+            src={backImage}
+            srcSet={`
+                ${getImageSize(frontImage, 25)} 400w,
+                ${getImageSize(frontImage, 50)} 400w,
+                ${frontImage} 1600w
+            `}  
             alt={`${alt} - secondary view`} 
             className="w-full h-full object-cover"
           />
@@ -79,8 +91,8 @@ export default function PortfolioThumbnail({
   );
 
   return href ? (
-    <a href={href} className="block" tabIndex={0}>
+    <Link to={href} className="block" tabIndex={0}>
       {content}
-    </a>
+    </Link>
   ) : content;
 }

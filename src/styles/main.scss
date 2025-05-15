@@ -10,6 +10,8 @@
 html,body {
   height: 100%;
   scroll-behavior: smooth;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 body {
@@ -33,22 +35,22 @@ hr {
   margin-block: 8px;
 }
 
-// #smooth-wrapper {
-//   overflow: hidden;
-//   position: fixed;
-//   height: 100%;
-//   width: 100%;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-// }
+#smooth-wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
-// // Smooth Scroll Styles (GSAP)
-// #smooth-content {
-//   position: absolute;  
-//   overflow: hidden;
-//   width: 100%;
-// }
+// Smooth Scroll Styles (GSAP)
+#smooth-content {
+  position: absolute;  
+  overflow: hidden;
+  width: 100%;
+}
 
 

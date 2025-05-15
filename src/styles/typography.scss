@@ -76,10 +76,29 @@ p,h1,h6 {
     text-transform: uppercase;
   }
 
-////////////////////////////////////////////////////////
-// MARKDOWN PROSE (req tailwindcss typography plugin) //
-////////////////////////////////////////////////////////
+  
+  ////////////////////////////////////////////////////////
+  // MARKDOWN PROSE (req tailwindcss typography plugin) //
+  ////////////////////////////////////////////////////////
+  
+@media (max-width: 640px) {
+  p,
+  .prose p,
+  .prose p.font-serif {
+    font-size: $type-2; // Smaller than $type-3
+    line-height: 180%;  // Slightly tighter for mobile
+  }
 
+  .prose ul li,
+  .prose ol li {
+    font-size: $type-2;
+  }
+
+  .prose blockquote,
+  .prose blockquote p {
+    font-size: $type-4;
+  }
+}
 .prose {
   
   p,h1,h6 {
@@ -185,8 +204,6 @@ p,h1,h6 {
   
   
   blockquote {
-    
-    font-size: $type-5;
     line-height: 1.4;
     color: var(--color-text-secondary, #666);
     border-left: 4px solid var(--color-accent, #0070f3);
@@ -197,7 +214,7 @@ p,h1,h6 {
 
   blockquote p {
     font-family: $font-family-mono;
-    font-size: $type-5;
+    font-size: $type-3;
   }
   
   code, pre, kbd, samp {

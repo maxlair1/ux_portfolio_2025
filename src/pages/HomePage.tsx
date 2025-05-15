@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Hero from './Hero.tsx';
-import About from './About.tsx';
-import Folio from './Folio.tsx';
-import Navigation from './Navigation.tsx';
-import Contact from './Contact.tsx';
-import Work from './Work.tsx';
-import Footer from './Footer.tsx';
+import Hero from '../components/Hero.tsx';
+import About from '../components/About.tsx';
+import Folio from '../components/Folio.tsx';
+import Navigation from '../components/Navigation.tsx';
+import Contact from '../components/Contact.tsx';
+import Work from '../components/Work.tsx';
+import Footer from '../components/Footer.tsx';
 
 const HomePage: React.FC = () => {
     return (

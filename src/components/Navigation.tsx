@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
                         mask-gradient-horizontal
                     "
                 />
-                <ul className="flex flex-col gap-2 p-4">
+                <ul className="flex flex-col p-4">
                     {navItems.map((item) => (
                         <li key={item.id}>
                             <Button href={item.href} appendStart={<p className="superscript">{item.id}</p>} text={item.text} />
@@ -62,7 +62,7 @@ const Navigation: React.FC = () => {
     )
 
     const backButton = (
-        <div className="mx-6">
+        <div className="md:mx-6">
             <Button
                 href="/"
                 variant="secondary"

@@ -3,7 +3,7 @@ title: Grokadoc
 description: Centralized Documentation Software with Project Management Tools
 coverImage: /grok_thumbnail2.png
 sticker: /grok_sticker.svg
-date: 2024 / 03 / 01
+date: 2024-03-01
 ---
 ## Overview
 ---
@@ -103,4 +103,4 @@ It is currently still being tested as funding is received. Unfortunately, the pr
 ---
 
 - Because I was building off of branding I had done several years prior, the colors could have contrasted better. In hindsight, I should have used Adobe Leonardo to construct my color system.
-- I faced discouragement due to visual differences of the alpha version and the design. Because of this, I let my design  be a little more lenient to allow development a little more wiggle room. REWORD As an alternative, I could enforce a front-end repository (or something similar) like Storybook to close those gaps and avoid slowing down development.
+- I faced discouragement due to visual differences of the alpha version and the design. Because of this, I let my design  be a little more lenient to allow development a little more wiggle room. As an alternative, I could enforce a front-end repository (or something similar) like Storybook to close those gaps and avoid slowing down development.

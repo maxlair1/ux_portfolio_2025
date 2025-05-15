@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import projectsJSON from "../projects.json";
 import { A } from "react-router/dist/development/route-data-B9_30zbP";
 import { Link } from 'react-router';
+import getImageSize from '../utils/getImageSize'
 
 interface ProjectContainerProps {
     backImage: string;
@@ -39,6 +40,11 @@ const ProjectContainer: React.FC<ProjectContainerProps> = ({ backImage, frontIma
                 >
                     <img
                     src={frontImage}
+                    srcSet={`
+                        ${getImageSize(frontImage, 25)} 400w,
+                        ${getImageSize(frontImage, 50)} 400w,
+                        ${frontImage} 1600w
+                    `}
                     alt={alt}
                     className="w-full h-full object-cover"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -61,6 +67,11 @@ const ProjectContainer: React.FC<ProjectContainerProps> = ({ backImage, frontIma
                     >
                         <img
                             src={backImage}
+                            srcSet={`
+                                ${getImageSize(backImage, 25)} 400w,
+                                ${getImageSize(backImage, 50)} 400w,
+                                ${backImage} 1600w
+                            `}
                             alt={`${alt} - secondary view`}
                             className="w-full h-full object-cover"
                         />
@@ -98,7 +109,7 @@ const Work: React.FC = () => {
                     title={project.name}
                     frontImage={project.thumbnailFirst}
                     backImage={project.thumbnailSecond}
-                    href={`/${project.slug}`}
+                    href={`/projects/${project.slug}`}
                     alt={project.name}
                 />
              ))}
