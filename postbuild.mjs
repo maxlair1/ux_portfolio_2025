@@ -1,6 +1,6 @@
 import { writeFile, copyFile } from 'fs/promises';
 
-const domain = 'faa.maxlair.com'; // ← change to your custom domain
+const domain = 'maxlair.com'; // ← change to your custom domain
 
 try {
   // Copy index.html to 404.html
