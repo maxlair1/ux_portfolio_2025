@@ -17,17 +17,17 @@ While working at Neuraldev AI, I was tasked with ideating on the flow and usabil
 \r
 ## Challenges\r
 ---\r
-The main challenges of this particular application on the UX-end were-REWORD\r
-- Determine how to treat tasks and how they are to be presented to the user - Are they indestructible, open to instantiation, can they be duplicated more than once?\r
+The main challenges of this particular application on the UX-side were:\r
+- Determining how to treat tasks and how they are to be presented to the user - Are they indestructible, open to instantiation, can they be duplicated more than once?\r
 - Hierarchy in the tree structure - We've seen it done well in apps like Obsidian, but how would that effect task and project management?\r
 - Accessibility features and tailoring to specific users - Showing people what they want to see and hiding what they don't.\r
 \r
 ## Research\r
 \r
-\r
 ---\r
 ### Findings\r
 Research reveals that fragmented project management systems create significant inefficiencies, with teams wasting 19% of their work week searching for information across multiple disconnected tools. This fragmentation leads to data inconsistency, miscommunication, and employee frustration. Overall, costing businesses an estimated $600 billion annually. The core problem stems from teams using separate systems for documentation and task management, creating multiple sources of truth that become increasingly out of sync. Grokadoc's approach could address these pain points by eliminating redundancy and providing role-specific views of the same underlying data.\r
+\r
 Key Statistics:\r
 \r
 - 19% of the average work week is wasted searching for information\r
