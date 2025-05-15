@@ -6,9 +6,7 @@ tags:
   - Design
   - Multi-Device
 coverImage: /bean_cover.png
-date: 2023 / 06 / 12
-gallery:
-  -
+date: 2023-06-12
 ---
 ## Overview
 
