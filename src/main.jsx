@@ -15,7 +15,7 @@ import rawProjects from './projects.json';
 
 const projectArray = Object.values(rawProjects.projects);
 const projectRoutes = projectArray.map((project) => ({
-  path: `/project/${project.slug}`,
+  path: `/${project.slug}`,
   element: <ProjectPage path={project.path} />,
 }));
 

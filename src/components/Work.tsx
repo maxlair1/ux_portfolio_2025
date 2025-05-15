@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import projectsJSON from "../projects.json";
 import { A } from "react-router/dist/development/route-data-B9_30zbP";
+import { Link } from 'react-router';
 
 interface ProjectContainerProps {
     backImage: string;
@@ -15,7 +16,7 @@ const ProjectContainer: React.FC<ProjectContainerProps> = ({ backImage, frontIma
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <a href={href}>
+        <Link to={href} reloadDocument>
             <div className="flex flex-col w-full cursor-pointer min-w-[200px] h-auto aspect-[2/3] my-2">
                 {/* Title - fixed above */}
                 <div className="text-[13px] font-mono mb-2 uppercase">
@@ -76,7 +77,7 @@ const ProjectContainer: React.FC<ProjectContainerProps> = ({ backImage, frontIma
                     </div>
                 </div>
             </div>
-        </a>
+        </Link>
     );
 };
 
@@ -97,7 +98,7 @@ const Work: React.FC = () => {
                     title={project.name}
                     frontImage={project.thumbnailFirst}
                     backImage={project.thumbnailSecond}
-                    href={`/project/${project.slug}`}
+                    href={`/${project.slug}`}
                     alt={project.name}
                 />
              ))}

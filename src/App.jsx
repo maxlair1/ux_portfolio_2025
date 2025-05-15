@@ -8,6 +8,7 @@ import './styles/App.scss';
 import Navigation from './components/Navigation.tsx';
 import FuzzyOverlay from './components/FuzzyOverlay.tsx';
 import FollowLabel from './components/FollowLabel.tsx'
+import PageTransition from "./components/PageTransition.tsx"
 
 // Register plugins
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
@@ -51,6 +52,7 @@ export default function App(props) {
   return (
     <>
       {/* content wrapper vvv */}
+      <PageTransition />
       <div id="smooth-wrapper">
         {/* Content vvv */}
         <div id="smooth-content">
