@@ -16,7 +16,6 @@ type buttonProps = {
   appendEnd?: ReactNode;
   href?: string;
   brackets?: boolean;
-  link?: string
 };
 
 const Button: React.FC<buttonProps> = ({
@@ -29,11 +28,10 @@ const Button: React.FC<buttonProps> = ({
   appendEnd,
   variant = "default",
   href = "#",
-  link
 }) => {
 
   return (
-    <Link to={href}>
+    <a href={href}>
       <button
         className={`flex items-center overflow-hidden cursor-pointer py-3 px-4 ${styles.rollButton} ${variant === "secondary" ? "inline box-decoration-clone text-text-main bg-highlight" : ""}`}
         onClick={onClick}
@@ -48,7 +46,7 @@ const Button: React.FC<buttonProps> = ({
         {iconAfter && <i className={`ri-${iconAfter} ml-2`}></i>}
         {appendEnd && <span className="ml-2">{appendEnd}</span>}
       </button>
-    </Link>
+    </a>
   );
 };
 

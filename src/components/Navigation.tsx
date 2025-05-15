@@ -13,7 +13,6 @@ const navItems = [
 const Navigation: React.FC = () => {
     const [open, setOpen] = useState(false);
     let location = useLocation()
-    console.log(location.pathname)
 
     const standardNav = (
         <nav>
