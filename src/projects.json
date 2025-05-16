@@ -3,23 +3,26 @@
         "Local Bean": {
             "slug": "local-bean",
             "name": "Local Bean",
-            "path": "/src/content/local-bean.md",
+            "path": "/src/docs/local-bean.md",
             "thumbnailFirst": "bean_cover.png",
-            "thumbnailSecond": "bean_ipad_shop.png"
+            "thumbnailSecond": "bean_ipad_shop.png",
+            "imageHook": "bean"
         },
         "Grokadoc": {
             "slug": "grokadoc",
             "name": "Grokadoc",
-            "path": "/src/content/grokadoc.md",
+            "path": "/src/docs/grokadoc.md",
             "thumbnailFirst": "grok_thumbnail2.png",
-            "thumbnailSecond": "grok_cover.png"
+            "thumbnailSecond": "grok_cover.png",
+            "imageHook": "grok"
         },
         "Dedoro": {
             "slug": "dedoro",
             "name": "Dedoro",
-            "path": "/src/content/dedoro.md",
+            "path": "/src/docs/dedoro.md",
             "thumbnailFirst": "doro_cover.png",
-            "thumbnailSecond": "doro_welcome_screen.png"
+            "thumbnailSecond": "doro_welcome_screen.png",
+            "imageHook": "doro"
         }
     }
 }

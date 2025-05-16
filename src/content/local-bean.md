@@ -7,7 +7,7 @@ tags:
   - Multi-Device
 coverImage: /bean_cover.png
 date: 2023-06-12
-
+imageHook: bean
 ---
 ## Overview
 ---

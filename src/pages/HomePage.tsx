@@ -7,11 +7,13 @@ import Navigation from '../components/Navigation.tsx';
 import Contact from '../components/Contact.tsx';
 import Work from '../components/Work.tsx';
 import Footer from '../components/Footer.tsx';
+import FuzzyOverlay from '../components/FuzzyOverlay.tsx';
 
 const HomePage: React.FC = () => {
     return (
         <>
             <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8" id='home'>
+                <FuzzyOverlay />
                 <motion.span
                     className="absolute inset-0 bg-highlight z-10"
                     initial={{ height: '100%' }}

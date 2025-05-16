@@ -3,6 +3,8 @@ title: Dedoro
 description: Reward Yourself for Productivity
 coverImage: /doro_cover.png
 date: 2023-11-18
+imageHook: doro
+prototype: true
 ---
 ## Context
 ---
@@ -99,6 +101,8 @@ After that, I applied my type and color choices and made high-fidelity designs o
 ![Dedoro Screens More](/doro_screens_alt.png)
 
 I have plans to either a) create a React Native app based around this design, OR b) develop it in iOS Switft and SwiftUI. 
+
+<div id="prototype"></div>
 
 ## Prototype
 <iframe style="border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 2rem; min-height: 650px; width: 100%;" width="800" height="450" src="https://embed.figma.com/proto/X64UjzyuJtB3lesw3iHMZY/Dedoro---Main-App--Copy-?page-id=156%3A568&node-id=156-682&p=f&viewport=428%2C12%2C0.19&scaling=scale-down&content-scaling=fixed&starting-point-node-id=163%3A5782&embed-host=share" allowfullscreen></iframe>

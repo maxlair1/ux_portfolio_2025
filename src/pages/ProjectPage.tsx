@@ -1,6 +1,6 @@
 // pages/project.tsx
 import { Buffer } from 'buffer';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 //Router
 import { useParams } from 'react-router';
 //Markdown
@@ -16,6 +16,8 @@ import ImageRenderer from '../components/ImageRenderer.tsx';
 import Footer from '../components/Footer.tsx';
 import Contact from '../components/Contact.tsx';
 import getImageSize from '../utils/getImageSize';
+import Carousel from '../components/Carousel.tsx';
+import Button from '../components/Button.tsx';
 
 window.Buffer = Buffer;
 
@@ -26,14 +28,16 @@ const ProjectPage = ({path}: { path: string }) => {
   const { slug } = useParams();
   const [content, setContent] = useState('');
   const [data, setData] = useState<data>({});
-
+  
   console.log(data.coverImage)
-
+  
   type data = {
     title?: string;
     description?: string;
     date?: string;
     coverImage?: string;
+    imageHook?: string;
+    prototype?: boolean;
   };
 
   //Stagger text animation on arrival
@@ -85,17 +89,20 @@ const ProjectPage = ({path}: { path: string }) => {
           style={{ borderRadius: 4 }}
       />
         <div className="flex flex-col relative w-full">
-          {/* Cover */}
-          <div className="relative h-[100vh]">
-          <img 
-            className="relative z-0 h-[100vh] w-full object-cover" 
-            src={data.coverImage} 
-            srcSet={`
-              ${getImageSize(data.coverImage, 25)} 500w,
-              ${getImageSize(data.coverImage, 50)} 1200w,
-              ${data.coverImage}
-            `}
-            />
+            <div className="relative h-[100vh]">
+              <img 
+                className="relative z-0 h-[100vh] w-full object-cover" 
+                src={data.coverImage} 
+                srcSet={`
+                  ${getImageSize(data.coverImage, 25)} 500w,
+                  ${getImageSize(data.coverImage, 50)} 1200w,
+                  ${data.coverImage}
+                `}
+              />
+            {data.prototype && (
+            <div className="absolute bottom-0 right-0 p-4 md:p-10 z-10">
+              <Button href='#prototype' variant='secondary' text="Jump To Prototype" appendStart="[" appendEnd="]"></Button>
+            </div>)}
             <div className="absolute inset-0 flex flex-col justify-end items-bottom p-4 md:p-10">
               <div>
                 <h1 className="unblurOnArrival inline-flex box-decoration-clone xl:text-[4vw] text-[50px] text-text-main bg-highlight px-4 py-1 font-mono">
@@ -114,9 +121,12 @@ const ProjectPage = ({path}: { path: string }) => {
               </div>
             </div>
           </div>
+          <div className='my-10'>
+            <Carousel imageHook={data.imageHook}/>
+          </div>
           {/* Content */}
           {/* <Sticker svg={data.sticker}></Sticker> */}
-          <div className="my-[250px] px-5 bg-red max-w-[1125px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mt-[100px] mb-[250px] px-5 bg-red max-w-[1125px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="prose prose-neutral dark:prose-invert max-w-none w-full overflow-visible">
               <ReactMarkdown
               rehypePlugins={[rehypeRaw]}

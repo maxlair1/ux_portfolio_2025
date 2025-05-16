@@ -11,7 +11,6 @@ import ProjectPage from './ProjectPage.tsx';
 import HomePage from './HomePage.tsx';
 //Components
 import Navigation from '../components/Navigation.tsx';
-import FuzzyOverlay from '../components/FuzzyOverlay.tsx';
 
 // Register plugins
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
@@ -51,7 +50,7 @@ export default function App(props) {
 
   return (
     <>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait"> */}
       <Navigation />
       <div id="smooth-wrapper">
         <div id="smooth-content">
@@ -60,9 +59,8 @@ export default function App(props) {
               <Route path="/projects/:slug" element={<ProjectPage />}/>
             </Routes>
         </div>
-        <FuzzyOverlay />
       </div>
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
       {/* https://gsap.com/community/forums/topic/34723-animated-cursor-follower-div-that-animates-on-top-of-certain-objects/#:~:text=I%20think%20I%20misunderstood%20your%20original%20goal%20%2D%20you%20don%27t%20even%20need%20to%20do%20any%20invalidate()%20%2D%20just%20play()%20and%20reverse()%3A%C2%A0 */}
       {/* <FollowLabel /> */}
     </>
