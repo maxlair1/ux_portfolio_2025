@@ -3,5 +3,6 @@ function addSuffixToFilename(filename, suffix) {
 }
 
 export default function getImageSize(filename, size) {
-  filename ? addSuffixToFilename(filename, `-${size}`) : null
+  if (!filename) return null;
+  return addSuffixToFilename(filename, `-${size}`);
 }

@@ -40,13 +40,8 @@ export default function PortfolioThumbnail({
           }}
         >
           <img 
-            src={frontImage} 
+            src={getImageSize(frontImage, 25)} 
             alt={alt}
-            srcSet={`
-                ${getImageSize(frontImage, 25)} 400w,
-                ${getImageSize(frontImage, 50)} 400w,
-                ${frontImage} 1600w
-            `} 
             className="w-full h-full object-cover"
           />
           
@@ -66,12 +61,7 @@ export default function PortfolioThumbnail({
           }}
         >
           <img 
-            src={backImage}
-            srcSet={`
-                ${getImageSize(frontImage, 25)} 400w,
-                ${getImageSize(frontImage, 50)} 400w,
-                ${frontImage} 1600w
-            `}  
+            src={getImageSize(backImage, 25)}
             alt={`${alt} - secondary view`} 
             className="w-full h-full object-cover"
           />

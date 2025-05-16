@@ -91,9 +91,9 @@ const ProjectPage = ({path}: { path: string }) => {
             className="relative z-0 h-[100vh] w-full object-cover" 
             src={data.coverImage} 
             srcSet={`
-              ${getImageSize(data.coverImage, 25)} 400w,
-              ${getImageSize(data.coverImage, 50)} 400w,
-              ${data.coverImage} 1600w
+              ${getImageSize(data.coverImage, 25)} 500w,
+              ${getImageSize(data.coverImage, 50)} 1200w,
+              ${data.coverImage}
             `}
             />
             <div className="absolute inset-0 flex flex-col justify-end items-bottom p-4 md:p-10">

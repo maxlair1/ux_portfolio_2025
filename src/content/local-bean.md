@@ -9,7 +9,7 @@ coverImage: /bean_cover.png
 date: 2023-06-12
 
 ---
-### Overview
+## Overview
 ---
 My Wife and I love coffee— it would be safe to say that it's "our thing." Sometimes we travel to different states purely to visit coffee shops. Something about them are just the embodiment of creativity, community, and artisanal beverages. We are snobs to a critical degree, but my Wife does something unique: Every coffee shop we go to, she adds to a list, which now contains over 200 entries, and she places it in order. The criteria for her ranking is concerned with the atmosphere, baristas, location, smells, food, and, of course, the coffee. The issue is that she keeps all of these sought after items...on an iPhone note. Additionally, the distribution to others is quite difficult.
 
@@ -19,7 +19,7 @@ One day, she asked the question, "would there be a way for an app to help me wit
 
 ![Local Bean Screens](/bean_screens_map+checkin.png)
 
-### Challenges
+## Challenges
 ---
 As we mapped out the concept, we faced a few immediate challenges:
 - Monetization (keep it free to use)
@@ -28,7 +28,7 @@ As we mapped out the concept, we faced a few immediate challenges:
 - What other problems can we solve along the way (i.e. suggested parking with direct route to it)
 These questions shaped every decision we made. The app had to be genuinely helpful, but it also had to be something people _wanted_ to open—especially when they weren’t hunting for coffee.
 
-### Research
+## Research
 ---
 First, I created some personas of people like me (and not like me) that would find themselves using this app. The findings were super insightful,  which gave this app an edge against all of the others. The main personas that impacted the way that I attempted to solve the above problems were:
 - ***The Coffee Curator***: "I want to rank and remember every café I visit, but my Notes app isn’t cutting it." → The core user. They need a structured, intuitive, and shareable way to keep track of their favorite coffee experiences. Local Bean exists because of them.
@@ -50,7 +50,7 @@ All of which have the following issues
 - NONE include anything to do with *parking*, or other complaints users make.
 
 
-### Discovery
+## Discovery
 ---
 Once I have a good grasp on the task at hand, I start sketching out screens and screen flows. The app was originally divided into 3 sections: Map, Social, and Profile.
 I also needed to create three types of "sign-ins": User, Cafe, Website. 
@@ -59,7 +59,7 @@ Later, I would remove the shop feature but kept alternative areas to highlight t
 
 ![Local Bean Flow](/bean_flow.png)
 
-## # Execution
+## Execution
 ---
 When I started designing this app, I was switching over from Sketch. While the setup was a little different, I remember how exciting it was to learn this new software! 
 I utilized Figma's token and complex states to create a minimal design system.  This gave me some of the reusable components I needed across the whole app.
