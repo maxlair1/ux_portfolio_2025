@@ -4,6 +4,7 @@ description: Centralized Documentation Software with Project Management Tools\r
 coverImage: /grok_thumbnail2.png\r
 sticker: /grok_sticker.svg\r
 date: 2024-03-01\r
+imageHook: grok\r
 ---\r
 ## Overview\r
 ---\r
