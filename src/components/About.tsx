@@ -1,5 +1,8 @@
-import React from 'react';
-import UnblurOnScroll from './UnblurOnScroll';
+import React, { useEffect } from 'react';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import '@splidejs/react-splide/css';
+import { loadImagesWithPrefix } from '../utils/loadImagesWithPrefix'
 
 const services = {
   productDesign: {
@@ -16,9 +19,15 @@ const services = {
   }
 }
 
-const About = () => {
-  return (
 
+const About = () => {
+
+  const companyImages = Object.entries(
+    import.meta.glob('/company_*', { eager: true })
+  ).map(([path, mod]) => mod.default || path);
+  console.log(companyImages)
+
+  return (
     <section className="mt-40 mx-4">
       <h1 className='flex justify-center pb-10'>About</h1>
       {/* Content */}
@@ -46,6 +55,55 @@ const About = () => {
             <hr />
           </div>
         ))}
+      </div>
+      {/* Carousel */}
+      <div className='h-20'>
+        <Splide
+              options={{
+                type: 'loop',
+                drag: 'free',
+                arrows: false,
+                pagination: false,
+                perPage: 3,
+                autoScroll: {
+                  speed: 0.2, // Adjust speed as needed
+                  pauseOnHover: false,
+                  pauseOnFocus: false,
+                },
+                fixedHeight: '25vw',
+                fixedWidth: '33vw',
+                cover: true, 
+                breakpoints: {
+                  1280: {
+                    fixedWidth: 600,
+                    fixedHeight: 450,
+                  },
+                  1024: {
+                    fixedWidth: 500,
+                    fixedHeight: 375,
+                  },
+                  768: {
+                    fixedWidth: 400,
+                    fixedHeight: 300,
+                  },
+                  480: {
+                    fixedWidth: 300,
+                    fixedHeight: 225,
+                  },
+                },      // Ensure images cover the slide area
+              }}
+              extensions={{ AutoScroll }}
+              aria-label="Continuous Image Carousel"
+            >
+              {companyImages.map((src, i) => (
+                <SplideSlide key={i}>
+                  <img
+                    src={src}
+                    alt={`slide-${i}`}
+                  />
+                </SplideSlide>
+              ))}
+            </Splide>
       </div>
     </section>
   );

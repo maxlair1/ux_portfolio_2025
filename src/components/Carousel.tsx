@@ -79,7 +79,6 @@ export default function TickerSlider({ imageHook }) {
           <img
             src={src}
             alt={`slide-${i}`}
-            loading="lazy"
           />
         </SplideSlide>
       ))}
