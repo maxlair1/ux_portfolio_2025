@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const FuzzyOverlay = () => {
   return (
-    <div className="pointer-events-none fixed inset-0 z-50 max-w-[100vw] max-h-[100vh]">
+    <div className="pointer-events-none fixed inset-0 z-50">
       <motion.div
         initial={{ transform: "translateX(-10%) translateY(-10%)" }}
         animate={{

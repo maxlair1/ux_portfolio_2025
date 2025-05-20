@@ -22,7 +22,7 @@ export default function Profile() {
   return (
     <div className="flex items-center md:justify-center h-screen flex-col relative">
       <img
-        className={`mix-blend-darken p-4 mt-20 md:mt-0 md:w-full transition-all duration-1000 delay-20 ${isBlurred ? 'blur-md' : 'blur-0'}`}
+        className={`mix-blend-darken p-4 mt-20 md:mt-0 md:w-full transition-all duration-1000 delay-[0.8s] ${isBlurred ? 'blur-md' : 'blur-0'}`}
         src="hero_logo.svg"
         alt="Hero Logo (Max Lair)"
       />
@@ -42,7 +42,7 @@ export default function Profile() {
           ))}
         </div>
       </div>
-      <div className={`${modelLoaded ? 'opacity-1 translate-y-[0px]' : 'opacity-0 translate-y-[200px]'} transition-[cubic-bezier(0.505, 0.800, 0.540, 0.995)] duration-700 z-[-1] absolute justify-center bottom-0 top-0 left-0 right-0 flex flex-col items-center pointer-events-none`}>
+      <div className={`${modelLoaded ? 'opacity-1 translate-y-[0px]' : 'opacity-0 translate-y-[200px]'} transition-[cubic-bezier(0.505, 0.800, 0.540, 0.995)] duration-700 delay-[1s] z-[-1] absolute justify-center bottom-0 top-0 left-0 right-0 flex flex-col items-center pointer-events-none`}>
         <ThreeDMe onModelLoaded={() => {setModelLoaded(true)}} gltfUrl="me_jacket_cropped.glb" style={{ width: '100%', height: '100%' }} />
       </div>
     </div>

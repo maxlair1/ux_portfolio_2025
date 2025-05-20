@@ -15,7 +15,6 @@ const HomePage: React.FC = () => {
         <>
             <div className="" id='home'>
                 <div className='max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8'>
-                    <FuzzyOverlay />
                     <motion.span
                         className="absolute inset-0 bg-highlight z-10"
                         initial={{ height: '100%' }}
@@ -39,6 +38,7 @@ const HomePage: React.FC = () => {
                 </div>
             </div>
             <Footer />
+            <FuzzyOverlay />
         </>
     );
 };
