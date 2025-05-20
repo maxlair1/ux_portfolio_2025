@@ -17,23 +17,33 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
 export default function App(props) {
   const location = useLocation();
-  
+
   // Smooth scroll for nav anchor links
   useLayoutEffect(() => {
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
     const handleClick = (e) => {
       e.preventDefault();
       const target = e.currentTarget.getAttribute('href');
       const targetEl = document.querySelector(target);
-      if (targetEl) {
+
+      if (!targetEl) return;
+
+      if (ScrollTrigger.isTouch !== 1 && ScrollSmoother.get()) {
+        // Smooth scroll with GSAP ScrollSmoother
         gsap.to(window, {
           duration: 1,
           scrollTo: { y: targetEl, offsetY: 0 },
           ease: "power4.inOut"
         });
+      } else {
+        // Native scroll fallback for mobile
+        targetEl.scrollIntoView({ behavior: "smooth" });
       }
     };
+
     navLinks.forEach(link => link.addEventListener('click', handleClick));
+
     return () => {
       navLinks.forEach(link => link.removeEventListener('click', handleClick));
     };
@@ -41,12 +51,24 @@ export default function App(props) {
 
   // Screen Scroll Smoother
   useLayoutEffect(() => {
-    const smoother = ScrollSmoother.create({
-      smooth: 2,
-      effects: true,
-      normalizeScroll: true
-    });
+    let smoother;
+
+    if (ScrollTrigger.isTouch !== 1) {
+      smoother = ScrollSmoother.create({
+        smooth: 2,
+        effects: true,
+        normalizeScroll: true
+      });
+    }
+
+    return () => {
+      // Clean up if created
+      if (smoother) {
+        smoother.kill();
+      }
+    };
   }, []);
+
 
   return (
     <>
@@ -54,10 +76,10 @@ export default function App(props) {
       <Navigation />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-            <Routes location={location} key={location.pathname}>
-              <Route index element={<HomePage />}/>
-              <Route path="/projects/:slug" element={<ProjectPage />}/>
-            </Routes>
+          <Routes location={location} key={location.pathname}>
+            <Route index element={<HomePage />} />
+            <Route path="/projects/:slug" element={<ProjectPage />} />
+          </Routes>
         </div>
       </div>
       {/* </AnimatePresence> */}
